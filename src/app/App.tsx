@@ -1,4 +1,5 @@
-import { Header } from '../../widgets/Header'
+import { Header } from '../widgets/Header'
+import './styles/styles.scss'
 
 export function App() {
 	return (
