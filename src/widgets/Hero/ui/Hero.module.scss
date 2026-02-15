@@ -1,0 +1,22 @@
+.hero {
+	img {
+		position: absolute;
+		top: 150px;
+		right: 0;
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		gap: 45px;
+	}
+	&__text span {
+		font-weight: 600;
+		color: #141416;
+	}
+	&__buttons {
+		display: flex;
+		flex-direction: row;
+		gap: 25px;
+	}
+}

@@ -10,3 +10,25 @@ ul {
 	margin: 0;
 	list-style-type: none;
 }
+section {
+	margin-top: 5.625rem;
+}
+.padding-18-30 button {
+	padding: 18px 30px !important;
+}
+
+.button button {
+	background-color: #000000;
+	border: none;
+	color: #ffffff;
+	font-size: 1rem;
+	font-family: 'Inter';
+	border-radius: 16px;
+	padding: 16px 24px;
+	cursor: pointer;
+}
+.button--negative {
+	background-color: #ffffff !important;
+	border: 2px solid #000000 !important;
+	color: #000000 !important;
+}
