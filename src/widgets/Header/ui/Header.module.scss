@@ -1,0 +1,50 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: 3.75rem;
+	}
+	&__nav ul {
+		display: flex;
+		flex-direction: row;
+		gap: 3.125rem;
+	}
+
+	&__login {
+		display: flex;
+		flex-direction: row;
+		gap: 1.875rem;
+	}
+	&__login input {
+		padding-left: 2.5rem;
+
+		background-image: url(../Search.svg);
+		background-position-y: center;
+		background-position-x: 0.5rem;
+		background-repeat: no-repeat;
+
+		background-color: #ededed;
+		color: #c2c3cb;
+		font-family: 'Poppins';
+		font-size: 1rem;
+		border-radius: 15px;
+		border: none;
+		outline: none;
+		flex: 1;
+	}
+	&__login button {
+		background-color: #141416;
+		border: none;
+		color: #ffffff;
+		font-size: 1rem;
+		font-family: 'Inter';
+		border-radius: 16px;
+		padding: 16px 24px;
+		cursor: pointer;
+	}
+}
