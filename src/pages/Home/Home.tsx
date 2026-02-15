@@ -1,3 +1,9 @@
+import { Hero } from '../../widgets/Hero'
+
 export function Home() {
-	return <>Home</>
+	return (
+		<>
+			<Hero />
+		</>
+	)
 }

@@ -26,7 +26,7 @@ export function Header() {
 					</ul>
 				</nav>
 			</div>
-			<div className={styles['header__login']}>
+			<div className={`${styles['header__login']} button`}>
 				<input type='search' placeholder='Search Art Work / Creator' />
 				<button>CONNECT WALLET</button>
 			</div>
