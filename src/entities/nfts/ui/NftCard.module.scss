@@ -1,0 +1,38 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	flex-shrink: 0;
+	min-width: 283px;
+
+	padding: 15px 15px 20px 15px;
+	background-color: #ffffff;
+	box-shadow: 40px 10px 60px 0 #c7c7c799;
+	border-radius: 24px;
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		padding-left: 5px;
+	}
+	&__description {
+		display: flex;
+	}
+	&__price {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+	}
+	&__etherium {
+		display: flex;
+		align-items: center;
+	}
+	&__etherium img {
+		width: 20px;
+	}
+	&__etherium span {
+		font-size: 16px;
+		color: #141416;
+	}
+}
