@@ -1,4 +1,4 @@
-import etherium from '../Etherium.svg'
+import etherium from '../Ethereum.svg'
 import { mockData } from '../model/mockData'
 import type { nftType } from '../model/types'
 import styles from './NftCard.module.scss'

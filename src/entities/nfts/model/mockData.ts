@@ -43,6 +43,27 @@ export const mockData: nftType[] = [
 		name: 'Sun-Glass',
 		price: 1.75,
 		expirationDate: '07h 09m 12s',
-		image: '/src/entities/nfts/5.png',
+		image: '/src/entities/nfts/4.png',
+	},
+	{
+		id: 6,
+		name: 'Sun-Glass',
+		price: 1.75,
+		expirationDate: '07h 09m 12s',
+		image: '/src/entities/nfts/4.png',
+	},
+	{
+		id: 7,
+		name: 'Sun-Glass',
+		price: 1.75,
+		expirationDate: '07h 09m 12s',
+		image: '/src/entities/nfts/4.png',
+	},
+	{
+		id: 8,
+		name: 'Sun-Glass',
+		price: 1.75,
+		expirationDate: '07h 09m 12s',
+		image: '/src/entities/nfts/4.png',
 	},
 ]
