@@ -2,7 +2,7 @@
 
 import type { nftType } from './types'
 
-export const mockData: nftType[] = [
+export const nftMockData: nftType[] = [
 	{
 		id: 0,
 		name: 'Sun-Glass',

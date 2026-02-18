@@ -26,6 +26,7 @@
 	}
 	&__buttons {
 		background-color: #fcfcfd;
+		position: relative;
 		display: flex;
 		flex-direction: row;
 		padding: 21px;
@@ -37,5 +38,6 @@
 		background-color: #fcfcfd;
 		border: 0;
 		outline: 0;
+		cursor: pointer;
 	}
 }

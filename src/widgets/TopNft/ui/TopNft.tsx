@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { NftCard } from '../../../entities/nfts'
-import { mockData } from '../../../entities/nfts/model/mockData'
+import { nftMockData } from '../../../entities/nfts/model/mockData'
 import type { nftType } from '../../../entities/nfts/model/types'
 import { nextSlide, previousSlide } from '../../../features'
 import { Button } from '../../../shared'
+import { Recent } from '../../Recent'
 import arrowLeftInactive from '../Arrow-left-inactive.svg'
 import arrowLeft from '../Arrow-left.svg'
 import arrowRightInactive from '../Arrow-right-inactive.svg'
@@ -11,7 +12,7 @@ import arrowRight from '../Arrow-right.svg'
 import styles from './TopNft.module.scss'
 
 export function TopNft() {
-	const nfts: nftType[] = mockData
+	const nfts: nftType[] = nftMockData
 	const nftsLength = nfts.length - 1
 	const [index, setIndex] = useState<number>(0)
 
@@ -44,6 +45,7 @@ export function TopNft() {
 					arrowInactive={arrowRightInactive}
 				/>
 			</div>
+			<Recent />
 		</section>
 	)
 }
