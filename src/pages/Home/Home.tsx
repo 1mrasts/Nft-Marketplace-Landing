@@ -1,4 +1,5 @@
 import { Hero } from '../../widgets/Hero'
+import { TopCollection } from '../../widgets/TopCollection'
 import { TopNft } from '../../widgets/TopNft'
 
 export function Home() {
@@ -6,6 +7,7 @@ export function Home() {
 		<>
 			<Hero />
 			<TopNft />
+			<TopCollection />
 		</>
 	)
 }
