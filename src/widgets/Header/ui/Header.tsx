@@ -4,7 +4,7 @@ import styles from './Header.module.scss'
 
 export function Header() {
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header} wrapper`}>
 			<div className={styles['header__nav']}>
 				<Link to='/'>
 					<img src={Logo} alt='Логотип' />

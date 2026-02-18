@@ -1,12 +1,11 @@
 .top-nft {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 	align-items: center;
 	gap: 6.25rem;
 	padding: 70px 6rem;
-	position: absolute;
 	width: 100%;
-	left: 0;
 	background-color: #f1f1f1;
 
 	h2 {

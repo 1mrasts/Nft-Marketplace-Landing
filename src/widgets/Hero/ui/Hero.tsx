@@ -3,7 +3,7 @@ import styles from './Hero.module.scss'
 
 export function Hero() {
 	return (
-		<section className={styles.hero}>
+		<section className={`${styles.hero} wrapper`}>
 			<img src={heroBanner} alt='Header' />
 			<div className={styles['hero__text']}>
 				<div>

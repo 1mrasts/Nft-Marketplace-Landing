@@ -28,9 +28,9 @@ export function Recent() {
 						<div className={`${styles['lists__col']} ${styles['align-right']}`}>
 							<div className={styles['lists__price']}>
 								<img src={etherium} alt='' />
-								<h5>{item.cash}</h5>
+								<h5>{item.cash.toLocaleString('en-US')}</h5>
 							</div>
-							<p className={styles.up}>%</p>
+							<p className='up'>%</p>
 						</div>
 					</li>
 				))}

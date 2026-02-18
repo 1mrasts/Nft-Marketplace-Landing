@@ -1,5 +1,4 @@
 body {
-	padding: 3rem 6rem 0rem 6rem;
 	background-color: #f9f9f9;
 	display: flex;
 	flex-direction: column;
@@ -13,6 +12,10 @@ ul {
 }
 section {
 	margin-top: 5.625rem;
+	width: 100%;
+}
+.wrapper {
+	padding: 3rem 6rem 0rem 6rem;
 }
 .padding-18-30 button {
 	padding: 18px 30px !important;
@@ -46,4 +49,13 @@ section {
 	background-color: #141416 !important;
 	font-size: 14px !important;
 	font-weight: 600;
+}
+
+.up {
+	font-size: 14px !important;
+	color: #10c352 !important;
+}
+.down {
+	color: #e23333 !important;
+	font-size: 14px !important;
 }
