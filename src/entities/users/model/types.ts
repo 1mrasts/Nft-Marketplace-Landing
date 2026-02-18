@@ -5,4 +5,7 @@ export type user = {
 	isBest: boolean
 	avatar: string
 	cash: number
+	floorPrice: number
+	owners: number
+	items: number
 }
