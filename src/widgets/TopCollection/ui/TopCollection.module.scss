@@ -4,10 +4,6 @@
 	gap: 90px;
 	align-items: center;
 
-	h2 {
-		color: #141416;
-	}
-
 	&__table {
 		width: 100%;
 		display: flex;
@@ -91,4 +87,23 @@
 }
 .gap-135 {
 	gap: 135px;
+}
+.more {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: end;
+
+	a {
+		color: #acadb9;
+		text-wrap-mode: nowrap;
+		gap: 15px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		img {
+			width: 15px;
+		}
+	}
 }

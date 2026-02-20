@@ -1,5 +1,7 @@
 import { useMemo } from 'react'
+import { Link } from 'react-router'
 import { usersMockData } from '../../../entities/users/model/mockData'
+import arrowRightLink from '../../../shared/assets/icons/Arrow-right-link.svg'
 import etherium from '../../../shared/assets/icons/Ethereum.svg'
 import styles from './TopCollection.module.scss'
 
@@ -51,6 +53,11 @@ export function TopCollection() {
 						</li>
 					))}
 				</ul>
+			</div>
+			<div className={styles.more}>
+				<Link to='discover'>
+					Explore All <img src={arrowRightLink} alt='' />
+				</Link>
 			</div>
 		</section>
 	)

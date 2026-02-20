@@ -9,6 +9,9 @@ export function NftCard({ id }: { id: number }) {
 	return (
 		<div className={styles.card}>
 			<img src={currentNft.image} alt='' />
+			<div className={styles.time}>
+				<span>{currentNft.expirationDate}</span>
+			</div>
 			<div className={styles['card__text']}>
 				<h3>{currentNft.name}</h3>
 				<div className={`${styles['card__description']} button`}>
