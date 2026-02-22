@@ -5,21 +5,30 @@
 	gap: 12px;
 	display: flex;
 	flex-direction: row;
+	flex: 1;
 	padding: 10px;
 	background-color: #ffffff;
 	border-radius: 16px;
 	box-shadow: 40px 10px 60px 0 #c7c7c799;
-	width: 18%;
 
+	&__body {
+		display: flex;
+		flex-direction: row;
+		gap: 15px;
+	}
 	&__avatar {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		gap: 12px;
 	}
+	&__icon {
+		position: relative;
+	}
 	&__text {
 		display: flex;
 		flex-direction: column;
+		width: 50%;
 
 		p {
 			font-weight: 500;
@@ -34,5 +43,13 @@
 
 	&__image {
 		max-width: 60px;
+		height: 60px;
 	}
+}
+.verified {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
