@@ -1,0 +1,65 @@
+.sellers {
+	position: absolute;
+	top: 157px;
+	right: 300px;
+	gap: 25px;
+	display: flex;
+	flex-direction: column;
+	padding: 26px 20px;
+	background-color: #ffffff;
+	border-radius: 16px;
+	box-shadow: 40px 10px 60px 0 #c7c7c799;
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+}
+.seller {
+	display: flex;
+	justify-content: space-between;
+	gap: 55px;
+
+	&__body {
+		display: flex;
+		gap: 10px;
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+
+		p {
+			font-size: 12px;
+			font-weight: 500;
+			color: #23262f;
+		}
+		span {
+			font-size: 10px;
+			font-weight: 400;
+			color: #777e90;
+		}
+	}
+	&__avatar {
+		position: relative;
+
+		div {
+			position: absolute;
+			display: flex;
+			top: 0;
+			right: 0;
+			background-color: #23262f;
+			width: 20px;
+			height: 20px;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+
+			span {
+				font-size: 12px;
+				font-weight: 600;
+				color: #fcfcfd;
+			}
+		}
+	}
+}
