@@ -7,7 +7,7 @@ export function Recent({ count }: { count: number }) {
 	const users = getRecentUsers(count)
 
 	return (
-		<section className={styles.recent}>
+		<div className={`${styles.recent}`}>
 			<div className={styles['recent__title']}>
 				<h3>Recent Viewed</h3>
 				<img src={dots} alt='' />
@@ -35,6 +35,6 @@ export function Recent({ count }: { count: number }) {
 					</li>
 				))}
 			</ul>
-		</section>
+		</div>
 	)
 }
