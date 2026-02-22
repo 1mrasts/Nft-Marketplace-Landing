@@ -1,0 +1,59 @@
+.unleash {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 100px;
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 70px;
+	}
+	&__text {
+		width: 45%;
+		display: flex;
+		flex-direction: column;
+		gap: 45px;
+
+		h2 {
+			line-height: 55px;
+		}
+		span {
+			font-size: 45px;
+			font-weight: 600;
+			color: #c5c5c5;
+		}
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		li {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 10px;
+		}
+		li::before {
+			content: '';
+			width: 20px;
+			height: 20px;
+
+			background: url('../Check-mark.svg') no-repeat center;
+			background-size: contain;
+		}
+	}
+}
+
+.recent {
+	z-index: 2;
+	position: absolute;
+	right: 455px;
+	top: 450px;
+}
+.bg-abstract {
+	z-index: -1;
+	position: absolute;
+	top: 490px;
+	right: 0;
+}

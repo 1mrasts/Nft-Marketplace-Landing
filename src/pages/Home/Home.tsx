@@ -2,6 +2,7 @@ import { ExploreMarket } from '../../widgets/ExploreMarket'
 import { Hero } from '../../widgets/Hero'
 import { TopCollection } from '../../widgets/TopCollection'
 import { TopNft } from '../../widgets/TopNft'
+import { Unleash } from '../../widgets/Unleash'
 
 export function Home() {
 	return (
@@ -10,6 +11,7 @@ export function Home() {
 			<TopNft />
 			<TopCollection />
 			<ExploreMarket />
+			<Unleash />
 		</>
 	)
 }
