@@ -4,4 +4,5 @@ export interface nftType {
 	price: number
 	expirationDate: string
 	image: string
+	idOwner: number
 }

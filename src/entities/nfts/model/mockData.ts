@@ -9,6 +9,7 @@ export const nftMockData: nftType[] = [
 		price: 1.75,
 		expirationDate: '07h 09m 12s',
 		image: '/src/entities/nfts/0.png',
+		idOwner: 0,
 	},
 	{
 		id: 1,
@@ -16,6 +17,7 @@ export const nftMockData: nftType[] = [
 		price: 1.75,
 		expirationDate: '07h 09m 12s',
 		image: '/src/entities/nfts/1.png',
+		idOwner: 1,
 	},
 	{
 		id: 2,
@@ -23,6 +25,7 @@ export const nftMockData: nftType[] = [
 		price: 1.25,
 		expirationDate: '19h 09m 12s',
 		image: '/src/entities/nfts/2.png',
+		idOwner: 2,
 	},
 	{
 		id: 3,
@@ -30,6 +33,7 @@ export const nftMockData: nftType[] = [
 		price: 1.25,
 		expirationDate: '19h 09m 12s',
 		image: '/src/entities/nfts/3.png',
+		idOwner: 3,
 	},
 	{
 		id: 4,
@@ -37,6 +41,7 @@ export const nftMockData: nftType[] = [
 		price: 1.75,
 		expirationDate: '07h 09m 12s',
 		image: '/src/entities/nfts/4.png',
+		idOwner: 4,
 	},
 	{
 		id: 5,
@@ -44,6 +49,7 @@ export const nftMockData: nftType[] = [
 		price: 1.75,
 		expirationDate: '07h 09m 12s',
 		image: '/src/entities/nfts/4.png',
+		idOwner: 5,
 	},
 	{
 		id: 6,
@@ -51,6 +57,7 @@ export const nftMockData: nftType[] = [
 		price: 1.75,
 		expirationDate: '07h 09m 12s',
 		image: '/src/entities/nfts/4.png',
+		idOwner: 0,
 	},
 	{
 		id: 7,
@@ -58,6 +65,7 @@ export const nftMockData: nftType[] = [
 		price: 1.75,
 		expirationDate: '07h 09m 12s',
 		image: '/src/entities/nfts/4.png',
+		idOwner: 1,
 	},
 	{
 		id: 8,
@@ -65,5 +73,6 @@ export const nftMockData: nftType[] = [
 		price: 1.75,
 		expirationDate: '07h 09m 12s',
 		image: '/src/entities/nfts/4.png',
+		idOwner: 2,
 	},
 ]

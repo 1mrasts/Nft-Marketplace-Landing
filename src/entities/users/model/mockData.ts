@@ -1,6 +1,6 @@
-import type { user } from './types'
+import type { userType } from './types'
 
-export const usersMockData: user[] = [
+export const usersMockData: userType[] = [
 	{
 		id: 0,
 		name: 'Alex Ca.',
@@ -22,6 +22,17 @@ export const usersMockData: user[] = [
 		floorPrice: 7.9,
 		owners: 3.4,
 		items: 900,
+	},
+	{
+		id: 2,
+		name: 'Imrasts',
+		login: '@imrasts',
+		isBest: true,
+		avatar: '/src/entities/users/avatar4.png',
+		cash: 5231,
+		floorPrice: 3.5,
+		owners: 2.2,
+		items: 500,
 	},
 	{
 		id: 3,
