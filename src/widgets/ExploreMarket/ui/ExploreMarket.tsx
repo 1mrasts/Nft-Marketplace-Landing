@@ -1,6 +1,7 @@
 import { NftCard } from '../../../entities/nfts'
 import { nftMockData } from '../../../entities/nfts/model/mockData'
 import type { nftType } from '../../../entities/nfts/model/types'
+import { ExploreAll } from '../../../shared/'
 import categoryIcon from '../../../shared/assets/icons/Body/Category.svg'
 import collectionIcon from '../../../shared/assets/icons/Body/Collection.svg'
 import priceIcon from '../../../shared/assets/icons/Body/Price.svg'
@@ -30,10 +31,11 @@ export function ExploreMarket() {
 				</div>
 			</div>
 			<div className={styles['marketplace__body']}>
-				{nfts.map(item => (
-					<NftCard id={item.id} />
+				{nfts.map((item, index) => (
+					<NftCard key={index} id={item.id} />
 				))}
 			</div>
+			<ExploreAll path='discover' />
 		</section>
 	)
 }

@@ -3,8 +3,8 @@ import etherium from '../../../shared/assets/icons/Ethereum.svg'
 import dots from '../dots-vertical.svg'
 import styles from './Recent.module.scss'
 
-export function Recent() {
-	const users = getRecentUsers()
+export function Recent({ count }: { count: number }) {
+	const users = getRecentUsers(count)
 
 	return (
 		<section className={styles.recent}>
