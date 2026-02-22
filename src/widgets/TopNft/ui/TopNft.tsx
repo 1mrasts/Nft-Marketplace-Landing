@@ -45,7 +45,9 @@ export function TopNft() {
 					arrowInactive={arrowRightInactive}
 				/>
 			</div>
-			<Recent count={3} />
+			<div className={styles.recent}>
+				<Recent count={3} />
+			</div>
 		</section>
 	)
 }
