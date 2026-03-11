@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { usersMockData } from '../../../entities/users/model/mockData'
 import type { userType } from '../../../entities/users/model/types'
+import { followsHandle } from '../../../features'
 import styles from './BestSellers.module.scss'
 
 export function BestSellers() {
-	const users: userType[] = usersMockData
+	const [users, setUsers] = useState<userType[]>(usersMockData)
 	return (
 		<div className={styles.sellers}>
 			<h3>Best Sellers</h3>
@@ -22,9 +24,21 @@ export function BestSellers() {
 								<span>{item.login}</span>
 							</div>
 						</div>
-						<div className='button'>
-							<button className='button--follow'>Follow</button>
-						</div>
+						{item.follow ? (
+							<div
+								className='button'
+								onClick={() => followsHandle(item.id, setUsers)}
+							>
+								<button className='button--unfollow'>Unfollow</button>
+							</div>
+						) : (
+							<div
+								className='button'
+								onClick={() => followsHandle(item.id, setUsers)}
+							>
+								<button className='button--follow'>Follow</button>
+							</div>
+						)}
 					</li>
 				))}
 			</ul>
