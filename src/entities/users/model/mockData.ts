@@ -36,8 +36,8 @@ export const usersMockData: userType[] = [
 	},
 	{
 		id: 3,
-		name: 'Liviya Ad.',
-		login: '@Lia',
+		name: 'Veronika Kr.',
+		login: '@Nika',
 		isBest: true,
 		avatar: '/src/entities/users/avatar2.png',
 		cash: 9999,
