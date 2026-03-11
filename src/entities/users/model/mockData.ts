@@ -11,6 +11,7 @@ export const usersMockData: userType[] = [
 		floorPrice: 3.5,
 		owners: 2.2,
 		items: 500,
+		follow: false,
 	},
 	{
 		id: 1,
@@ -22,6 +23,7 @@ export const usersMockData: userType[] = [
 		floorPrice: 7.9,
 		owners: 3.4,
 		items: 900,
+		follow: false,
 	},
 	{
 		id: 2,
@@ -33,6 +35,7 @@ export const usersMockData: userType[] = [
 		floorPrice: 3.5,
 		owners: 2.2,
 		items: 500,
+		follow: true,
 	},
 	{
 		id: 3,
@@ -44,6 +47,7 @@ export const usersMockData: userType[] = [
 		floorPrice: 3.5,
 		owners: 2.2,
 		items: 500,
+		follow: false,
 	},
 	{
 		id: 4,
@@ -55,6 +59,7 @@ export const usersMockData: userType[] = [
 		floorPrice: 3.9,
 		owners: 3.4,
 		items: 560,
+		follow: false,
 	},
 	{
 		id: 5,
@@ -66,5 +71,6 @@ export const usersMockData: userType[] = [
 		floorPrice: 3.5,
 		owners: 2.2,
 		items: 500,
+		follow: false,
 	},
 ]

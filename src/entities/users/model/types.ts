@@ -8,4 +8,5 @@ export type userType = {
 	floorPrice: number
 	owners: number
 	items: number
+	follow: boolean
 }
