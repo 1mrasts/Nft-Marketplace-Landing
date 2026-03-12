@@ -1,0 +1,46 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	gap: 45px;
+	background-color: #141416;
+	padding: 100px 95px 80px 95px;
+
+	&__nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		h4 {
+			font-size: 30px;
+			font-weight: 600;
+			color: #ffffff;
+		}
+		ul {
+			display: flex;
+			flex-direction: row;
+			gap: 70px;
+		}
+		a {
+			color: #b9b9b9;
+		}
+	}
+	&__title {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+		align-items: center;
+	}
+	&__service {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		ul {
+			display: flex;
+			flex-direction: row;
+			gap: 50px;
+		}
+	}
+}

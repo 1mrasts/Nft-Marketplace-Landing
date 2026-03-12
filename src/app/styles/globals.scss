@@ -2,7 +2,6 @@ body {
 	background-color: #f9f9f9;
 	display: flex;
 	flex-direction: column;
-	gap: 6.25rem;
 	overflow-x: hidden;
 }
 ul {
@@ -11,6 +10,10 @@ ul {
 	list-style-type: none;
 }
 section {
+	margin-top: 5.625rem;
+	width: 100%;
+}
+footer {
 	margin-top: 5.625rem;
 	width: 100%;
 }
@@ -23,6 +26,9 @@ section {
 .mt-300 {
 	margin-top: 18.75rem;
 }
+.mt-150 {
+	margin-top: 9.375rem;
+}
 .sep-vert {
 	width: 2px;
 	height: 26px;
@@ -32,6 +38,11 @@ section {
 	width: 100%;
 	height: 2px;
 	background-color: #cbcbcb;
+}
+.sep-horiz-gray {
+	width: 100%;
+	height: 2px;
+	background-color: #818181;
 }
 
 .button button {
