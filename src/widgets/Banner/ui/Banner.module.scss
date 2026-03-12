@@ -1,0 +1,33 @@
+.banner {
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+	&__block {
+		position: relative;
+		padding: 45px 22px 50px 66px;
+		background-color: #141416;
+		border-radius: 30px;
+
+		img {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		h2 {
+			color: #ffffff;
+		}
+		h3 {
+			color: #d4d4d4;
+			opacity: 60%;
+			font-weight: 500;
+		}
+	}
+	&__buttons {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+	}
+}

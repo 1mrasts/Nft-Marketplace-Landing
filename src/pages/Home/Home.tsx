@@ -1,3 +1,4 @@
+import { Banner } from '../../widgets/Banner'
 import { ExploreMarket } from '../../widgets/ExploreMarket'
 import { Hero } from '../../widgets/Hero'
 import { TopCollection } from '../../widgets/TopCollection'
@@ -12,6 +13,7 @@ export function Home() {
 			<TopCollection />
 			<ExploreMarket />
 			<Unleash />
+			<Banner />
 		</>
 	)
 }
