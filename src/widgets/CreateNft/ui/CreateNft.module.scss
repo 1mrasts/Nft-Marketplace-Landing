@@ -1,0 +1,78 @@
+.sell {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+
+	&__title {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: center;
+	}
+	&__forms {
+		display: flex;
+		flex-direction: column;
+		gap: 35px;
+		width: 50%;
+
+		form {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			label {
+				font-weight: 500;
+			}
+			input {
+				padding: 20px 25px;
+
+				background-image: url(../edit.svg);
+				background-color: #efefef;
+				background-position: right 25px top 20px;
+				background-size: 22px;
+				background-repeat: no-repeat;
+
+				color: #9596a6;
+				font-family: 'Poppins';
+				font-weight: 400;
+				font-size: 14px;
+				outline: none;
+				border: none;
+				border-radius: 10px;
+			}
+			select {
+				padding: 20px 70px 20px 25px;
+
+				background-image: url(../arrow.svg);
+				background-color: #efefef;
+				background-position: right 25px top 25px;
+				background-size: 10px;
+				background-repeat: no-repeat;
+
+				appearance: none;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				background-color: #efefef;
+				color: #9596a6;
+				font-family: 'Poppins';
+				font-weight: 400;
+				line-height: 100%;
+				font-size: 14px;
+				outline: none;
+				border: none;
+				border-radius: 10px;
+			}
+		}
+		&-dual {
+			display: flex;
+			flex-direction: row;
+			gap: 35px;
+		}
+	}
+}
+
+.forms__description {
+	input {
+		padding: 25px 25px 115px 25px !important;
+	}
+}

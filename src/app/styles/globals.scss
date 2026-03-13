@@ -118,3 +118,8 @@ footer {
 	width: 8px;
 	height: 8px;
 }
+.no-image {
+	input {
+		background-image: none !important;
+	}
+}
