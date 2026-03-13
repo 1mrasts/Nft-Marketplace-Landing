@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router'
+import { Discover } from '../../pages/Discover'
 import { Home } from '../../pages/Home'
 import { App } from '../App'
 
@@ -10,6 +11,10 @@ export const Router = createBrowserRouter([
 			{
 				index: true,
 				element: <Home />,
+			},
+			{
+				path: '/discover',
+				element: <Discover />,
 			},
 		],
 	},

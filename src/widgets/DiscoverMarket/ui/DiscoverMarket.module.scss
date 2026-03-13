@@ -1,0 +1,34 @@
+.marketplace {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 100px;
+	&__header {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 45px;
+
+		h2 {
+			line-height: 30px;
+		}
+	}
+	&__body {
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+		flex-wrap: wrap;
+	}
+}
+
+.sort {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+
+	button {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+	}
+}
