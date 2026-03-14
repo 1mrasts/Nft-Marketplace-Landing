@@ -2,7 +2,20 @@
 	display: flex;
 	width: 100%;
 	flex-direction: column;
+	gap: 150px;
 
+	&__body {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		gap: 50px;
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		gap: 110px;
+	}
 	&__title {
 		display: flex;
 		flex-direction: row;
@@ -13,7 +26,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 35px;
-		width: 50%;
 
 		form {
 			display: flex;
@@ -21,7 +33,8 @@
 			gap: 20px;
 
 			label {
-				font-weight: 500;
+				font-size: 20px;
+				font-weight: 600;
 			}
 			input {
 				padding: 20px 25px;
@@ -39,6 +52,8 @@
 				outline: none;
 				border: none;
 				border-radius: 10px;
+
+				line-height: 125%;
 			}
 			select {
 				padding: 20px 70px 20px 25px;
@@ -61,12 +76,93 @@
 				outline: none;
 				border: none;
 				border-radius: 10px;
+
+				line-height: 125%;
 			}
 		}
 		&-dual {
 			display: flex;
 			flex-direction: row;
 			gap: 35px;
+		}
+		&-toggle {
+			flex-direction: row !important;
+			justify-content: space-between;
+			align-items: center;
+
+			p {
+				font-size: 14px;
+			}
+
+			input {
+				padding: 5px;
+			}
+		}
+		&-slider {
+			position: relative;
+			display: inline-block;
+			width: 55px;
+			height: 30px;
+
+			input {
+				display: none;
+			}
+			span {
+				position: absolute;
+				inset: 0;
+				background: #d9d9d9;
+				border-radius: 60px;
+				transition: 0.3s;
+			}
+			span::before {
+				content: '';
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				left: 5px;
+				top: 5px;
+				background: black;
+				border-radius: 50%;
+				transition: 0.3s;
+			}
+			input:checked + span {
+				background: black;
+			}
+			input:checked + span::before {
+				transform: translateX(25px);
+				background: white;
+			}
+		}
+	}
+	button {
+		justify-content: center;
+	}
+	&__avatar {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		align-items: center;
+
+		&-block {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			justify-content: center;
+			align-items: center;
+			width: 65%;
+			aspect-ratio: 1 / 1;
+			border-radius: 30px;
+
+			background-color: #fcfcfd;
+			box-shadow: 40px 10px 60px 0 rgba(199, 199, 199, 0.6);
+
+			p {
+				text-align: center;
+			}
+		}
+		button {
+			width: 50% !important;
 		}
 	}
 }

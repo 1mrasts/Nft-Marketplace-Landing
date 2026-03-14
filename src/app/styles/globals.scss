@@ -123,3 +123,29 @@ footer {
 		background-image: none !important;
 	}
 }
+.option-input {
+	display: flex;
+	border-radius: 10px !important;
+	overflow: hidden;
+	select {
+		border-radius: 0 !important;
+		position: relative;
+	}
+	input {
+		border-radius: 0 !important;
+	}
+	.option-input-hr {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.option-input-hr::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		width: 1px;
+		height: 39px;
+		background-color: #dadada;
+	}
+}
