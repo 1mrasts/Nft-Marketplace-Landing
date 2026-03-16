@@ -6,3 +6,8 @@ export interface nftType {
 	image: string
 	idOwner: number
 }
+
+export type NftsContextType = {
+	nfts: nftType[]
+	addNft: (nft: nftType) => void
+}
