@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { NftCard } from '../../../entities/nfts'
-import { nftMockData } from '../../../entities/nfts/model/mockData'
-import type { nftType } from '../../../entities/nfts/model/types'
+import { useNfts } from '../../../entities/nfts/model/useNfts'
 import { nextSlide, previousSlide } from '../../../features'
 import { Button } from '../../../shared'
 import { Recent } from '../../Recent'
@@ -12,15 +11,19 @@ import arrowRight from '../Arrow-right.svg'
 import styles from './TopNft.module.scss'
 
 export function TopNft() {
-	const nfts: nftType[] = nftMockData
+	const { nfts } = useNfts()
 	const nftsLength = nfts.length - 1
 	const [index, setIndex] = useState<number>(0)
+	const cardWidth = 323 //px
+	const offset = nftsLength % 2 === 0 ? 0 : cardWidth / 2
 
 	return (
 		<section className={`${styles['top-nft']} mt-300`}>
 			<h2>Weekly - Top NFT</h2>
 			<div className={styles['top-nft__slide']}>
-				<ul style={{ transform: `translateX(${index * 323 * -1}px)` }}>
+				<ul
+					style={{ transform: `translateX(${-index * cardWidth + offset}px)` }}
+				>
 					{nfts.map((item, index) => (
 						<NftCard key={index} id={item.id} />
 					))}
