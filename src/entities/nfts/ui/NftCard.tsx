@@ -1,11 +1,10 @@
 import etherium from '../../../shared/assets/icons/Ethereum.svg'
-import { nftMockData } from '../model/mockData'
-import type { nftType } from '../model/types'
+import { useNfts } from '../model/useNfts'
 import styles from './NftCard.module.scss'
 
 export function NftCard({ id }: { id: number }) {
-	const nft: nftType[] = nftMockData.filter(item => item.id == id)
-	const currentNft = nft[0]
+	const { nfts } = useNfts()
+	const currentNft = nfts.filter(item => item.id == id)[0]
 	return (
 		<div className={styles.card}>
 			<img src={currentNft.image} alt='' />

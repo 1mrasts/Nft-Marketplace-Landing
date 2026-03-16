@@ -8,6 +8,7 @@ export function CreateNft() {
 	const [name, setName] = useState<string>('')
 	const [price, setPrice] = useState<number>(0)
 
+	// TODO: Вынести логику в feature
 	function addNftHandle() {
 		addNft({
 			id: nfts[nfts.length - 1].id + 1,
