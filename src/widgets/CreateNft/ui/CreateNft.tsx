@@ -1,7 +1,24 @@
+import { useState } from 'react'
+import { useNfts } from '../../../entities/nfts/model/useNfts'
 import upload from '../upload.svg'
 import styles from './CreateNft.module.scss'
 
 export function CreateNft() {
+	const { nfts, addNft } = useNfts()
+	const [name, setName] = useState<string>('')
+	const [price, setPrice] = useState<number>(0)
+
+	function addNftHandle() {
+		addNft({
+			id: nfts[nfts.length - 1].id + 1,
+			name,
+			price,
+			expirationDate: '00h 00m 00s',
+			image: '/src/entities/nfts/1.png',
+			idOwner: 1,
+		})
+		console.log('NFT создан')
+	}
 	return (
 		<>
 			<section className={`${styles.sell} wrapper button`}>
@@ -13,7 +30,11 @@ export function CreateNft() {
 						<div className={styles['sell__forms']}>
 							<form>
 								<label htmlFor='name'>Name</label>
-								<input type='text' placeholder='ArtWork Name' />
+								<input
+									type='text'
+									placeholder='ArtWork Name'
+									onChange={e => setName(e.target.value)}
+								/>
 							</form>
 							<form className={styles['forms__description']}>
 								<label htmlFor='description'>Description</label>
@@ -49,7 +70,11 @@ export function CreateNft() {
 												<option value='bit'>BIT</option>
 											</select>
 										</div>
-										<input type='text' placeholder='0.00007 ETC' />
+										<input
+											type='text'
+											placeholder='0.00007 ETC'
+											onChange={e => setPrice(Number(e.target.value))}
+										/>
 									</div>
 								</form>
 								<form>
@@ -83,7 +108,7 @@ export function CreateNft() {
 								</label>
 							</form>
 						</div>
-						<button>Create</button>
+						<button onClick={addNftHandle}>Create</button>
 					</div>
 					<div className={`${styles['sell__avatar']} button`}>
 						<a href='#' className={styles['sell__avatar-block']}>
