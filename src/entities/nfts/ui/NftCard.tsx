@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import etherium from '../../../shared/assets/icons/Ethereum.svg'
 import { useNfts } from '../model/useNfts'
 import styles from './NftCard.module.scss'
@@ -6,7 +7,7 @@ export function NftCard({ id }: { id: number }) {
 	const { nfts } = useNfts()
 	const currentNft = nfts.filter(item => item.id == id)[0]
 	return (
-		<div className={styles.card}>
+		<Link className={styles.card} to={`nft/${currentNft.id}`}>
 			<img src={currentNft.image} alt='' />
 			<div className={styles.time}>
 				<span>{currentNft.expirationDate}</span>
@@ -24,6 +25,6 @@ export function NftCard({ id }: { id: number }) {
 					<button className='button--gray'>PLACE BID</button>
 				</div>
 			</div>
-		</div>
+		</Link>
 	)
 }
