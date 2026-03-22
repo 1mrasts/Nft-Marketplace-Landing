@@ -7,7 +7,7 @@ export function NftCard({ id }: { id: number }) {
 	const { nfts } = useNfts()
 	const currentNft = nfts.filter(item => item.id == id)[0]
 	return (
-		<Link className={styles.card} to={`nft/${currentNft.id}`}>
+		<Link className={styles.card} to={`/nft/${currentNft.id}`}>
 			<img className={styles['card__logo']} src={currentNft.image} alt='' />
 			<div className={styles.time}>
 				<span>{currentNft.expirationDate}</span>

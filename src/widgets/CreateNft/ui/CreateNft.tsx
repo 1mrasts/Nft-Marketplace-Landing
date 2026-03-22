@@ -1,25 +1,36 @@
 import React, { useRef, useState } from 'react'
+import type {
+	currency,
+	nftType,
+	royalty,
+} from '../../../entities/nfts/model/types'
 import { useNfts } from '../../../entities/nfts/model/useNfts'
 import upload from '../upload.svg'
 import styles from './CreateNft.module.scss'
 
 export function CreateNft() {
 	const { nfts, addNft } = useNfts()
-	const [name, setName] = useState<string>('')
-	const [price, setPrice] = useState<number>(0)
-	const [selectedImage, setSelectedImage] = useState<string>('')
+	const [nftForm, setNftForm] = useState<nftType>({
+		id: nfts[nfts.length - 1].id + 1,
+		name: '',
+		description: '',
+		royalty: 'Royalty',
+		size: 0,
+		tags: [''],
+		currency: 'ETH',
+		price: 0,
+		stock: '001',
+		sale: true,
+		direct_sale: false,
+		expirationDate: '00h 00m 00s',
+		image: '',
+		idOwner: 1,
+	})
 	const inputRef = useRef<HTMLInputElement>(null)
 
 	// TODO: Вынести логику в feature
 	function addNftHandle() {
-		addNft({
-			id: nfts[nfts.length - 1].id + 1,
-			name,
-			price,
-			expirationDate: '00h 00m 00s',
-			image: selectedImage,
-			idOwner: 1,
-		})
+		addNft(nftForm)
 		console.log('NFT создан')
 	}
 
@@ -32,7 +43,7 @@ export function CreateNft() {
 		if (e.target.files && e.target.files[0]) {
 			const file = e.target.files[0]
 			const fileUrl = URL.createObjectURL(file) // создаём временный URL
-			setSelectedImage(fileUrl)
+			setNftForm(prev => ({ ...prev, image: fileUrl }))
 		}
 	}
 	return (
@@ -49,24 +60,58 @@ export function CreateNft() {
 								<input
 									type='text'
 									placeholder='ArtWork Name'
-									onChange={e => setName(e.target.value)}
+									onChange={e =>
+										setNftForm(prev => ({ ...prev, name: e.target.value }))
+									}
 								/>
 							</form>
 							<form className={styles['forms__description']}>
 								<label htmlFor='description'>Description</label>
-								<input type='text' placeholder='Enter Your Description' />
+								<input
+									type='text'
+									placeholder='Enter Your Description'
+									onChange={e =>
+										setNftForm(prev => ({
+											...prev,
+											description: e.target.value,
+										}))
+									}
+								/>
 							</form>
 							<div className={styles['sell__forms-dual']}>
 								<form>
 									<label htmlFor='royalty'>Royalty</label>
-									<select name='royalty'>
-										<option value='royalty'>Royalty</option>
-										<option value='other'>Other</option>
+									<select
+										name='royalty'
+										onChange={e =>
+											setNftForm(prev => ({
+												...prev,
+												royalty: e.target.value as royalty,
+											}))
+										}
+									>
+										<option value='Royalty'>Royalty</option>
+										<option value='Creator Fee'>Creator Fee</option>
+										<option value='Secondary Sale Fee'>
+											Secondary Sale Fee
+										</option>
+										<option value='Percentage'>Percentage</option>
+										<option value='Fixed Fee'>Fixed Fee</option>
+										<option value='No Royalty'>No Royalty</option>
 									</select>
 								</form>
 								<form className='no-image'>
 									<label htmlFor='size'>Size</label>
-									<input type='text' placeholder='Ex - 100 x 100' />
+									<input
+										type='text'
+										placeholder='Ex - 100 x 100 (100)'
+										onChange={e =>
+											setNftForm(prev => ({
+												...prev,
+												size: Number(e.target.value),
+											}))
+										}
+									/>
 								</form>
 							</div>
 							<form>
@@ -74,6 +119,12 @@ export function CreateNft() {
 								<input
 									type='text'
 									placeholder='Beautiful Castle, Monkeys ETC'
+									onChange={e =>
+										setNftForm(prev => ({
+											...prev,
+											tags: e.target.value.split(', '),
+										}))
+									}
 								/>
 							</form>
 							<div className={styles['sell__forms-dual']}>
@@ -81,25 +132,42 @@ export function CreateNft() {
 									<label htmlFor='price'>Price</label>
 									<div className='option-input no-image'>
 										<div className='option-input-hr'>
-											<select name='currency'>
-												<option value='eth'>ETH</option>
-												<option value='bit'>BIT</option>
+											<select
+												name='currency'
+												onChange={e =>
+													setNftForm(prev => ({
+														...prev,
+														currency: e.target.value as currency,
+													}))
+												}
+											>
+												<option value='ETH'>ETH</option>
+												<option value='BTC'>BTC</option>
+												<option value='USDT'>USDT</option>
 											</select>
 										</div>
 										<input
 											type='text'
 											placeholder='0.00007 ETC'
-											onChange={e => setPrice(Number(e.target.value))}
+											onChange={e =>
+												setNftForm(prev => ({
+													...prev,
+													price: Number(e.target.value),
+												}))
+											}
 										/>
 									</div>
 								</form>
 								<form>
 									<label htmlFor='stocks'>in Stock</label>
-									<select>
+									<select
+										onChange={e =>
+											setNftForm(prev => ({ ...prev, stock: e.target.value }))
+										}
+									>
 										<option value='001'>001</option>
 										<option value='002'>002</option>
 										<option value='003'>003</option>
-										<option value='004'>004</option>
 									</select>
 								</form>
 							</div>
@@ -109,7 +177,12 @@ export function CreateNft() {
 									<p>People Will Bids On Your NFT Project</p>
 								</div>
 								<label className={styles['sell__forms-slider']}>
-									<input type='checkbox' />
+									<input
+										onChange={e =>
+											setNftForm(prev => ({ ...prev, sale: e.target.checked }))
+										}
+										type='checkbox'
+									/>
 									<span></span>
 								</label>
 							</form>
@@ -119,7 +192,15 @@ export function CreateNft() {
 									<p>No Bids - Only Direct Salling</p>
 								</div>
 								<label className={styles['sell__forms-slider']}>
-									<input type='checkbox' />
+									<input
+										onChange={e =>
+											setNftForm(prev => ({
+												...prev,
+												direct_sale: e.target.checked,
+											}))
+										}
+										type='checkbox'
+									/>
 									<span></span>
 								</label>
 							</form>
@@ -129,9 +210,9 @@ export function CreateNft() {
 					<div className={`${styles['sell__avatar']} button`}>
 						<a
 							style={
-								selectedImage != null
+								nftForm.image != null
 									? {
-											backgroundImage: `url(${selectedImage})`,
+											backgroundImage: `url(${nftForm.image})`,
 											backgroundSize: 'cover	',
 											backgroundPosition: 'center',
 										}
@@ -143,9 +224,9 @@ export function CreateNft() {
 							<img
 								src={upload}
 								alt=''
-								style={selectedImage.length < 1 ? {} : { display: 'none' }}
+								style={nftForm.image.length < 1 ? {} : { display: 'none' }}
 							/>
-							<p style={selectedImage.length < 1 ? {} : { display: 'none' }}>
+							<p style={nftForm.image.length < 1 ? {} : { display: 'none' }}>
 								PNG, GIF, WEBP, MP4
 								<br /> or MP3. Max 1Gb.
 							</p>
