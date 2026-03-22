@@ -1,2 +1,117 @@
 .product {
+	display: flex;
+	flex-direction: column;
+	gap: 55px;
+
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		padding: 40px;
+		background-color: #fafafa;
+		border-radius: 25px;
+		box-shadow: 20px 20px 60px 0px #0000001f;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 70px;
+
+		.text__block {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+
+			h2 {
+				line-height: 32px;
+			}
+		}
+		.author__block {
+			display: flex;
+			flex-direction: row;
+			gap: 80px;
+
+			img {
+				max-width: 66px;
+				max-height: 66px;
+			}
+
+			.author {
+				display: flex;
+				flex-direction: row;
+				gap: 20px;
+				align-items: center;
+
+				&__text {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+
+					h3 {
+						font-size: 25px;
+					}
+				}
+			}
+		}
+		.info__block {
+			display: flex;
+			justify-content: space-between;
+
+			.info {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+
+				span {
+					font-size: 20px;
+					font-weight: 400;
+					color: #000000;
+				}
+
+				.price {
+					display: flex;
+					align-items: center;
+
+					img {
+						width: 35px;
+						height: 55px;
+						color: #292b39;
+					}
+					h4 {
+						font-size: 34px;
+						color: #292b39;
+					}
+				}
+			}
+		}
+		button {
+			justify-content: center;
+			padding: 30px !important;
+			border-radius: 20px;
+
+			font-family: 'Poppins';
+			font-weight: 700;
+			font-size: 18px;
+		}
+	}
+	.avatar {
+		display: flex;
+
+		width: 45%;
+	}
+}
+
+.back {
+	display: flex;
+	flex-direction: row;
+	gap: 35px;
+	align-items: center;
+
+	h3 {
+		font-size: 30px;
+	}
+}
+
+.wrapper {
+	padding: 0rem 12rem 0rem 12rem;
 }
