@@ -11,6 +11,11 @@
 	box-shadow: 40px 10px 60px 0 #c7c7c799;
 	border-radius: 24px;
 
+	&__logo {
+		width: 253px;
+		height: 253px;
+		border-radius: 24px;
+	}
 	&__text {
 		display: flex;
 		flex-direction: column;
