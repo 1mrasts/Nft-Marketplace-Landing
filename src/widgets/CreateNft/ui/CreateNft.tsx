@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useNfts } from '../../../entities/nfts/model/useNfts'
 import upload from '../upload.svg'
 import styles from './CreateNft.module.scss'
@@ -7,6 +7,8 @@ export function CreateNft() {
 	const { nfts, addNft } = useNfts()
 	const [name, setName] = useState<string>('')
 	const [price, setPrice] = useState<number>(0)
+	const [selectedImage, setSelectedImage] = useState<string>('')
+	const inputRef = useRef<HTMLInputElement>(null)
 
 	// TODO: Вынести логику в feature
 	function addNftHandle() {
@@ -15,10 +17,23 @@ export function CreateNft() {
 			name,
 			price,
 			expirationDate: '00h 00m 00s',
-			image: '/src/entities/nfts/1.png',
+			image: selectedImage,
 			idOwner: 1,
 		})
 		console.log('NFT создан')
+	}
+
+	function handleLoadClick(e: React.MouseEvent<HTMLAnchorElement>) {
+		e.preventDefault()
+		inputRef.current?.click() // Триггерим клик по input
+	}
+
+	function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+		if (e.target.files && e.target.files[0]) {
+			const file = e.target.files[0]
+			const fileUrl = URL.createObjectURL(file) // создаём временный URL
+			setSelectedImage(fileUrl)
+		}
 	}
 	return (
 		<>
@@ -112,13 +127,36 @@ export function CreateNft() {
 						<button onClick={addNftHandle}>Create</button>
 					</div>
 					<div className={`${styles['sell__avatar']} button`}>
-						<a href='#' className={styles['sell__avatar-block']}>
-							<img src={upload} alt='' />
-							<p>
+						<a
+							style={
+								selectedImage != null
+									? {
+											backgroundImage: `url(${selectedImage})`,
+											backgroundSize: 'cover	',
+											backgroundPosition: 'center',
+										}
+									: {}
+							}
+							onClick={handleLoadClick}
+							className={styles['sell__avatar-block']}
+						>
+							<img
+								src={upload}
+								alt=''
+								style={selectedImage.length < 1 ? {} : { display: 'none' }}
+							/>
+							<p style={selectedImage.length < 1 ? {} : { display: 'none' }}>
 								PNG, GIF, WEBP, MP4
 								<br /> or MP3. Max 1Gb.
 							</p>
 						</a>
+						<input
+							type='file'
+							accept='image/*'
+							ref={inputRef}
+							style={{ display: 'none' }}
+							onChange={handleFileChange}
+						/>
 						<button>Upload</button>
 					</div>
 				</div>

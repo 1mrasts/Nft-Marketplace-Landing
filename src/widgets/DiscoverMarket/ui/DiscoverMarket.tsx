@@ -1,13 +1,13 @@
 import { NftCard } from '../../../entities/nfts'
-import { nftMockData } from '../../../entities/nfts/model/mockData'
 import type { nftType } from '../../../entities/nfts/model/types'
+import { useNfts } from '../../../entities/nfts/model/useNfts'
 import categoryIcon from '../../../shared/assets/icons/Body/Category.svg'
 import collectionIcon from '../../../shared/assets/icons/Body/Collection.svg'
 import priceIcon from '../../../shared/assets/icons/Body/Price.svg'
 import styles from './DiscoverMarket.module.scss'
 
 export function DiscoverMarket() {
-	const nfts: nftType[] = nftMockData
+	const nfts: nftType[] = useNfts().nfts
 
 	return (
 		<>
