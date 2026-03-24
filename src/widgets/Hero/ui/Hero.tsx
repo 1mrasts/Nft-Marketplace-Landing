@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router'
 import heroBanner from '../Hero-banner.png'
 import styles from './Hero.module.scss'
 
 export function Hero() {
+	const navigate = useNavigate()
+
 	return (
 		<section className={`${styles.hero} wrapper`}>
 			<img src={heroBanner} alt='Header' />
@@ -14,8 +17,13 @@ export function Hero() {
 					</p>
 				</div>
 				<div className={`${styles['hero__buttons']} button padding-18-30`}>
-					<button>EXPLORE MORE</button>
-					<button className='button--negative'>CREATE NFT</button>
+					<button onClick={() => navigate('/discover')}>EXPLORE MORE</button>
+					<button
+						className='button--negative'
+						onClick={() => navigate('/sell')}
+					>
+						CREATE NFT
+					</button>
 				</div>
 			</div>
 		</section>
