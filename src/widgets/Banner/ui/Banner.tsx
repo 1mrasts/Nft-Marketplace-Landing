@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router'
 import banner__img from '../banner-image.png'
 import styles from './Banner.module.scss'
 
 export function Banner() {
+	const navigate = useNavigate()
 	return (
 		<>
 			<section className={`${styles.banner} wrapper`}>
@@ -10,8 +12,18 @@ export function Banner() {
 					<div className={styles['banner__body']}>
 						<h3>World’s Largest NFT Place</h3>
 						<div className={`${styles['banner__buttons']} button`}>
-							<button className='button--white'>Explore More</button>
-							<button className='button--white-negative'>Sell Artwork</button>
+							<button
+								className='button--white'
+								onClick={() => navigate('/discover')}
+							>
+								Explore More
+							</button>
+							<button
+								className='button--white-negative'
+								onClick={() => navigate('/sell')}
+							>
+								Sell Artwork
+							</button>
 						</div>
 					</div>
 					<img src={banner__img} alt='Баннер' />
