@@ -1,6 +1,6 @@
 # Пет-проект 3
 
-[README на английском языке](https://github.com/1mrasts/Payday-App/blob/main/README.md)
+[README на английском языке](https://github.com/1mrasts/Nft-Marketplace-Landing/blob/main/README.md)
 
 ## NFT-Marketplace
 

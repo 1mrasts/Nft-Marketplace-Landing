@@ -1,6 +1,6 @@
 # Pet Project 3
 
-[README in Russian](https://github.com/1mrasts/Payday-App/blob/main/README_RU.md)
+[README in Russian](https://github.com/1mrasts/Nft-Marketplace-Landing/blob/main/README_RU.md)
 
 ## NFT-Marketplace
 
