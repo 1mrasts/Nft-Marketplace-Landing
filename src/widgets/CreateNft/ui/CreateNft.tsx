@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import type {
 	currency,
 	nftType,
 	royalty,
 } from '../../../entities/nfts/model/types'
 import { useNfts } from '../../../entities/nfts/model/useNfts'
+import { handleFileChange, handleLoadClick } from '../../../features'
 import upload from '../upload.svg'
 import styles from './CreateNft.module.scss'
 
@@ -28,23 +29,9 @@ export function CreateNft() {
 	})
 	const inputRef = useRef<HTMLInputElement>(null)
 
-	// TODO: Вынести логику в feature
 	function addNftHandle() {
 		addNft(nftForm)
 		console.log('NFT создан')
-	}
-
-	function handleLoadClick(e: React.MouseEvent<HTMLAnchorElement>) {
-		e.preventDefault()
-		inputRef.current?.click() // Триггерим клик по input
-	}
-
-	function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
-		if (e.target.files && e.target.files[0]) {
-			const file = e.target.files[0]
-			const fileUrl = URL.createObjectURL(file) // создаём временный URL
-			setNftForm(prev => ({ ...prev, image: fileUrl }))
-		}
 	}
 	return (
 		<>
@@ -218,7 +205,7 @@ export function CreateNft() {
 										}
 									: {}
 							}
-							onClick={handleLoadClick}
+							onClick={e => handleLoadClick(e, inputRef)}
 							className={styles['sell__avatar-block']}
 						>
 							<img
@@ -236,7 +223,7 @@ export function CreateNft() {
 							accept='image/*'
 							ref={inputRef}
 							style={{ display: 'none' }}
-							onChange={handleFileChange}
+							onChange={e => handleFileChange(e, setNftForm)}
 						/>
 						<button>Upload</button>
 					</div>
