@@ -4,7 +4,7 @@
 	position: relative;
 	align-items: center;
 	gap: 6.25rem;
-	padding: 70px 6rem;
+	padding: 60px 0px 60px 0px;
 	width: 100%;
 	background-color: #f1f1f1;
 
@@ -14,14 +14,17 @@
 	&__slide {
 		display: flex;
 		flex-direction: column;
-		width: max-content;
-		overflow-x: visible;
+		width: 100%;
+		overflow-x: clip;
+		position: relative;
 	}
 	&__slide ul {
 		display: flex;
 		flex-direction: row;
 		gap: 40px;
 		transition: transform 0.4s ease;
+
+		width: max-content;
 	}
 	&__buttons {
 		background-color: #fcfcfd;
