@@ -22,6 +22,13 @@
 			font-size: 22px;
 			color: #93989a;
 		}
+		#collection_description--adaptive {
+			@media (max-width: 1260px) {
+				flex-direction: column;
+				gap: 5px;
+				align-items: end;
+			}
+		}
 	}
 	&__description {
 		display: flex;
@@ -33,7 +40,13 @@
 			color: #010101;
 			font-size: 24px !important;
 		}
+		#adaptive {
+			@media (max-width: 1260px) {
+				display: none !important;
+			}
+		}
 	}
+
 	&__person {
 		display: flex;
 		flex-direction: row;
