@@ -149,3 +149,19 @@ footer {
 		background-color: #dadada;
 	}
 }
+#adaptive-hide {
+	@media (max-width: 1360px) {
+		display: none;
+	}
+}
+#adaptive-show {
+	@media (max-width: 1360px) {
+		display: flex !important;
+	}
+}
+#hide {
+	display: none;
+}
+#show {
+	display: flex;
+}
