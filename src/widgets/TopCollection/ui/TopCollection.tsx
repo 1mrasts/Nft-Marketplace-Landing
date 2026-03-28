@@ -14,10 +14,10 @@ export function TopCollection() {
 					<span>Collection</span>
 					<div className={styles['collection__description']}>
 						<span>Volume</span>
-						<span id={styles['adaptive']}>24h %</span>
-						<span id={styles['adaptive']}>Floor Price</span>
-						<span id={styles['adaptive']}>Owners</span>
-						<span id={styles['adaptive']}>Items</span>
+						<span id='adaptive-hide'>24h %</span>
+						<span id='adaptive-hide'>Floor Price</span>
+						<span id='adaptive-hide'>Owners</span>
+						<span id='adaptive-hide'>Items</span>
 					</div>
 				</div>
 				<ul className={`${styles['column']}`}>
@@ -39,15 +39,12 @@ export function TopCollection() {
 									<p>{item.cash.toLocaleString('en-US')}</p>
 								</div>
 								<span className='up'>%</span>
-								<div
-									id={styles['adaptive']}
-									className={styles['collection__price']}
-								>
+								<div id='adaptive-hide' className={styles['collection__price']}>
 									<img src={etherium} alt='' />
 									<p>{item.floorPrice}</p>
 								</div>
-								<span id={styles['adaptive']}>{item.owners}</span>
-								<span id={styles['adaptive']}>{item.items}</span>
+								<span id='adaptive-hide'>{item.owners}</span>
+								<span id='adaptive-hide'>{item.items}</span>
 							</div>
 						</li>
 					))}
