@@ -1,3 +1,6 @@
+html {
+	overflow-x: hidden;
+}
 body {
 	background-color: #f9f9f9;
 	display: flex;
@@ -12,6 +15,9 @@ ul {
 section {
 	margin-top: 5.625rem;
 	width: 100%;
+	@media (max-width: 1360px) {
+		margin-top: 30px;
+	}
 }
 footer {
 	margin-top: 5.625rem;
@@ -19,15 +25,38 @@ footer {
 }
 .wrapper {
 	padding: 3rem 6rem 0rem 6rem;
+	@media (max-width: 1360px) {
+		padding: 30px;
+	}
 }
 .padding-18-30 button {
 	padding: 18px 30px !important;
+	@media (max-width: 1360px) {
+		padding: 15px 20px !important;
+		line-height: 100%;
+		align-items: center;
+		white-space: nowrap;
+		border-radius: 8px !important;
+	}
+}
+.mt-350 {
+	margin-top: 350px;
 }
 .mt-300 {
 	margin-top: 18.75rem;
+
+	@media (max-width: 1360px) {
+		margin-top: 60px;
+	}
+}
+.mt-200 {
+	margin-top: 200px;
 }
 .mt-150 {
 	margin-top: 9.375rem;
+}
+.mt-20 {
+	margin-top: 1.25rem;
 }
 .sep-vert {
 	width: 2px;
@@ -37,6 +66,12 @@ footer {
 .sep-horiz {
 	width: 100%;
 	height: 2px;
+	background-color: #cbcbcb;
+}
+.sep-horiz-1px {
+	display: none;
+	width: 100%;
+	height: 1px;
 	background-color: #cbcbcb;
 }
 .sep-horiz-gray {
@@ -61,6 +96,13 @@ footer {
 	background-color: #ffffff00 !important;
 	border: 2px solid #000000 !important;
 	color: #000000 !important;
+
+	@media (max-width: 1360px) {
+		padding: 15px 20px !important;
+		line-height: 100%;
+		align-items: center;
+		white-space: nowrap;
+	}
 }
 .button--white-negative {
 	padding: 20px 25px !important;
@@ -117,6 +159,11 @@ footer {
 	border-radius: 50%;
 	width: 8px;
 	height: 8px;
+
+	@media (max-width: 1360px) {
+		width: 4px;
+		height: 4px;
+	}
 }
 .no-image {
 	input {
@@ -164,4 +211,7 @@ footer {
 }
 #show {
 	display: flex;
+}
+br {
+	display: block;
 }
