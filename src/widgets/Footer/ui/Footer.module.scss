@@ -5,11 +5,27 @@
 	background-color: #141416;
 	padding: 100px 95px 80px 95px;
 
+	@media (max-width: 1360px) {
+		padding: 50px 30px 30px 30px;
+	}
 	&__nav {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+
+		@media (max-width: 1360px) {
+			flex-direction: column;
+
+			ul {
+				flex-direction: column !important;
+				gap: 30px !important;
+			}
+			a {
+				font-size: 14px !important;
+				text-transform: uppercase;
+			}
+		}
 
 		h4 {
 			font-size: 30px;
@@ -36,6 +52,11 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+
+		@media (max-width: 1360px) {
+			flex-direction: column-reverse;
+			gap: 15px;
+		}
 
 		ul {
 			display: flex;
