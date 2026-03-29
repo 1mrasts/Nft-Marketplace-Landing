@@ -12,9 +12,14 @@ export function ExploreMarket() {
 	return (
 		<section className={`${styles.marketplace} wrapper`}>
 			<div className={styles['marketplace__header']}>
-				<h2>Explore Marketplace</h2>
+				<h2>
+					Explore
+					<br id='adaptive-show' /> Marketplace
+				</h2>
 				<div className={`${styles.sort} button`}>
-					<button className='button--negative'>All</button>
+					<button id='adaptive-hide' className='button--negative'>
+						All
+					</button>
 					<button className='button--negative'>
 						<img src={categoryIcon} alt='' />
 						Category

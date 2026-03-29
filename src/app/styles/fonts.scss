@@ -12,14 +12,23 @@ h6 {
 h1 {
 	font-size: 75px;
 	color: hsla(240, 5%, 8%, 1);
+	@media (max-width: 900px) {
+		font-size: 45px !important;
+	}
 }
 h2 {
 	font-size: 45px;
 	color: #141416;
+	@media (max-width: 900px) {
+		font-size: 30px !important;
+	}
 }
 h3 {
 	font-size: 21px;
 	color: hsla(240, 5%, 8%, 1);
+	@media (max-width: 900px) {
+		font-size: 16px !important;
+	}
 }
 
 p,
@@ -29,6 +38,9 @@ li,
 label {
 	font-family: 'Inter';
 	font-size: 18px;
+	@media (max-width: 900px) {
+		font-size: 12px !important;
+	}
 }
 
 p,
@@ -43,4 +55,9 @@ a {
 }
 a {
 	text-decoration: none;
+}
+button {
+	@media (max-width: 900px) {
+		font-size: 12px !important;
+	}
 }

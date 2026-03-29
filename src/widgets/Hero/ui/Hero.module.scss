@@ -1,23 +1,77 @@
 .hero {
-	img {
+	@media (max-width: 1360px) {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__banner {
 		position: absolute;
 		top: 150px;
 		right: 0;
 		z-index: -2;
+		@media (max-width: 1360px) {
+			width: 450px;
+			position: absolute;
+			right: 0;
+			top: 450px;
+		}
+		@media (max-width: 900px) {
+			width: 400px !important;
+			position: absolute;
+			right: 0;
+			top: 400px;
+		}
 	}
 	&__text {
 		display: flex;
 		flex-direction: column;
 		width: 50%;
 		gap: 45px;
+
+		@media (max-width: 1360px) {
+			align-items: center;
+		}
 	}
 	&__text span {
 		font-weight: 600;
 		color: #141416;
+	}
+	&__desc {
+		.creators__text {
+			display: none;
+			flex-direction: row;
+			gap: 10px;
+			align-items: center;
+
+			p {
+				font-weight: 600;
+				font-family: 'Poppins';
+			}
+		}
+
+		@media (max-width: 1360px) {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+			gap: 10px;
+
+			h1 {
+				line-height: 120%;
+				white-space: nowrap;
+			}
+		}
 	}
 	&__buttons {
 		display: flex;
 		flex-direction: row;
 		gap: 25px;
 	}
+}
+
+.sep-horiz {
+	width: 34px;
+	height: 1px;
+	background-color: #676767;
 }

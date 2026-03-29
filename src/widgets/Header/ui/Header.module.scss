@@ -1,9 +1,17 @@
 .header {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	width: 100%;
-	justify-content: space-between;
 
+	&__block {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+		@media (max-width: 1360px) {
+			margin-bottom: 40px;
+		}
+	}
 	#burger {
 		display: none;
 		z-index: 1;

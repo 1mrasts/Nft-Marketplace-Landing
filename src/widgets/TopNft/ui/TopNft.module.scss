@@ -8,6 +8,10 @@
 	width: 100%;
 	background-color: #f1f1f1;
 
+	@media (max-width: 1360px) {
+		gap: 60px;
+	}
+
 	h2 {
 		color: #c5c5c5;
 	}

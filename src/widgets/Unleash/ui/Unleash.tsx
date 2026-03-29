@@ -8,8 +8,8 @@ import styles from './Unleash.module.scss'
 export function Unleash() {
 	return (
 		<>
-			<section className={`${styles.unleash} wrapper`}>
-				<div className='sep-horiz'></div>
+			<section id='adaptive-hide' className={`${styles.unleash} wrapper`}>
+				<div id='adaptive-hide' className='sep-horiz'></div>
 				<div className={styles['unleash__body']}>
 					<div className={styles['unleash__text']}>
 						<h2>
@@ -17,7 +17,7 @@ export function Unleash() {
 							<br />
 							Your Inner Collector
 						</h2>
-						<ul>
+						<ul id='adaptive-hide'>
 							<li>Best Seller All Around World</li>
 							<li>$2M+ Transections Every Day</li>
 							<li>Secure Transactions</li>

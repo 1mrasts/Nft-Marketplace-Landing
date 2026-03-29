@@ -8,7 +8,7 @@ import twitter from '/src/shared/assets/icons/Social/Twitter.svg'
 export function Footer() {
 	return (
 		<>
-			<footer className={`${styles.footer} mt-150`}>
+			<footer className={`${styles.footer} mt-200`}>
 				<div className={styles['footer__nav']}>
 					<div className={styles['footer__title']}>
 						<img src={logo} alt='' />

@@ -10,6 +10,22 @@
 	background-color: #ffffff;
 	border-radius: 16px;
 	box-shadow: 40px 10px 60px 0 #c7c7c799;
+	@media (max-width: 1360px) {
+		padding: 5px;
+		border-radius: 6px;
+		align-items: center;
+
+		img {
+			width: 30px;
+			height: 30px;
+		}
+		p {
+			font-size: 8px !important;
+		}
+		span {
+			font-size: 8px !important;
+		}
+	}
 
 	&__body {
 		display: flex;
@@ -52,4 +68,9 @@
 	position: absolute;
 	top: 0;
 	right: 0;
+
+	@media (max-width: 1360px) {
+		width: 9px !important;
+		height: 9px !important;
+	}
 }

@@ -80,7 +80,13 @@ export function TopNft() {
 	}
 
 	return (
-		<section className={`${styles['top-nft']} mt-300`}>
+		<section
+			className={
+				containerWidth < 1360
+					? `${styles['top-nft']} mt-350`
+					: `${styles['top-nft']} mt-300`
+			}
+		>
 			<h2>Weekly - Top NFT</h2>
 
 			<div className={styles['top-nft__slide']} ref={sliderRef}>
@@ -107,7 +113,7 @@ export function TopNft() {
 				<Button switchFunction={loopNextSlide} arrowActive={arrowRight} />
 			</div>
 
-			<div className={styles.recent}>
+			<div id='adaptive-hide' className={styles.recent}>
 				<Recent count={3} />
 			</div>
 		</section>
