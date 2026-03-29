@@ -10,10 +10,20 @@
 	border-radius: 16px;
 	box-shadow: 40px 10px 60px 0 #c7c7c799;
 
+	@media (max-width: 1360px) {
+		padding: 12px 10px;
+		border-radius: 6px;
+		gap: 11px;
+	}
+
 	ul {
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
+
+		@media (max-width: 1360px) {
+			gap: 8px;
+		}
 	}
 }
 .seller {
