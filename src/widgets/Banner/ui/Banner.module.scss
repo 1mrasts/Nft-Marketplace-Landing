@@ -3,6 +3,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 50px;
+
+		@media (max-width: 1360px) {
+			gap: 25px;
+		}
 	}
 	&__block {
 		position: relative;
@@ -10,10 +14,32 @@
 		background-color: #141416;
 		border-radius: 30px;
 
+		@media (max-width: 1360px) {
+			display: flex;
+			flex-direction: column;
+			padding: 20px 40px 80px 40px;
+			align-items: center;
+
+			text-align: center;
+
+			h2 {
+				font-size: 20px !important;
+			}
+			h3 {
+				font-size: 10px !important;
+			}
+		}
+
 		img {
 			position: absolute;
 			top: 0;
 			right: 0;
+
+			@media (max-width: 1360px) {
+				top: 140px;
+				right: 50%;
+				transform: translateX(50%);
+			}
 		}
 
 		h2 {
@@ -29,5 +55,14 @@
 		display: flex;
 		flex-direction: row;
 		gap: 30px;
+
+		@media (max-width: 1360px) {
+			button {
+				padding: 10px 12px !important;
+				font-size: 10px !important;
+				border-radius: 6px !important;
+				align-items: center;
+			}
+		}
 	}
 }
