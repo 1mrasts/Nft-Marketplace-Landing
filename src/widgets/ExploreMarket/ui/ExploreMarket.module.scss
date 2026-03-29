@@ -3,11 +3,23 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 100px;
+
+	@media (max-width: 1360px) {
+		gap: 75px;
+	}
 	&__header {
-		align-items: center;
+		text-align: center;
 		display: flex;
 		flex-direction: column;
 		gap: 65px;
+
+		@media (max-width: 1360px) {
+			text-align: center;
+			gap: 30px;
+		}
+		br {
+			display: none;
+		}
 	}
 	&__body {
 		display: flex;
@@ -27,5 +39,17 @@
 		display: flex;
 		flex-direction: row;
 		gap: 10px;
+
+		@media (max-width: 1360px) {
+			border-radius: 9px !important;
+			gap: 5px !important;
+			font-size: 10px !important;
+			padding: 10px !important;
+
+			img {
+				width: 12px;
+				height: 12px;
+			}
+		}
 	}
 }
