@@ -36,10 +36,43 @@ export function CreateNft() {
 	return (
 		<>
 			<section className={`${styles.sell} wrapper button`}>
-				<div className={styles['sell__title']}>
+				<div id='adaptive-hide' className={styles['sell__title']}>
 					<h2>Create Your NFT</h2>
 				</div>
 				<div className={styles['sell__body']}>
+					<div className={`${styles['sell__avatar']} button`}>
+						<a
+							style={
+								nftForm.image != null
+									? {
+											backgroundImage: `url(${nftForm.image})`,
+											backgroundSize: 'cover	',
+											backgroundPosition: 'center',
+										}
+									: {}
+							}
+							onClick={e => handleLoadClick(e, inputRef)}
+							className={styles['sell__avatar-block']}
+						>
+							<img
+								src={upload}
+								alt=''
+								style={nftForm.image.length < 1 ? {} : { display: 'none' }}
+							/>
+							<p style={nftForm.image.length < 1 ? {} : { display: 'none' }}>
+								PNG, GIF, WEBP, MP4
+								<br /> or MP3. Max 1Gb.
+							</p>
+						</a>
+						<input
+							type='file'
+							accept='image/*'
+							ref={inputRef}
+							style={{ display: 'none' }}
+							onChange={e => handleFileChange(e, setNftForm)}
+						/>
+						<button>Upload</button>
+					</div>
 					<div className={styles['sell__text']}>
 						<div className={styles['sell__forms']}>
 							<form>
@@ -193,39 +226,6 @@ export function CreateNft() {
 							</form>
 						</div>
 						<button onClick={addNftHandle}>Create</button>
-					</div>
-					<div className={`${styles['sell__avatar']} button`}>
-						<a
-							style={
-								nftForm.image != null
-									? {
-											backgroundImage: `url(${nftForm.image})`,
-											backgroundSize: 'cover	',
-											backgroundPosition: 'center',
-										}
-									: {}
-							}
-							onClick={e => handleLoadClick(e, inputRef)}
-							className={styles['sell__avatar-block']}
-						>
-							<img
-								src={upload}
-								alt=''
-								style={nftForm.image.length < 1 ? {} : { display: 'none' }}
-							/>
-							<p style={nftForm.image.length < 1 ? {} : { display: 'none' }}>
-								PNG, GIF, WEBP, MP4
-								<br /> or MP3. Max 1Gb.
-							</p>
-						</a>
-						<input
-							type='file'
-							accept='image/*'
-							ref={inputRef}
-							style={{ display: 'none' }}
-							onChange={e => handleFileChange(e, setNftForm)}
-						/>
-						<button>Upload</button>
 					</div>
 				</div>
 			</section>
