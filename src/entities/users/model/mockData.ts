@@ -5,6 +5,7 @@ import avatar3 from '../avatar3.png'
 import avatar4 from '../avatar4.png'
 import type { userType } from './types'
 
+console.log(avatar0)
 export const usersMockData: userType[] = [
 	{
 		id: 0,

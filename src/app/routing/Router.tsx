@@ -31,6 +31,6 @@ export const Router = createBrowserRouter(
 		},
 	],
 	{
-		basename: '/Nft-Marketplace-Landing',
+		basename: '/Nft-Marketplace-Landing/',
 	},
 )

@@ -1,12 +1,13 @@
 // mockData - используется для заглушки backend api, чтобы данные так или иначе были
 
-import avatar0 from '../0.png'
-import avatar1 from '../1.png'
-import avatar2 from '../2.png'
-import avatar3 from '../3.png'
-import avatar4 from '../4.png'
+import avatar0 from '../avatar0.png'
+import avatar1 from '../avatar1.png'
+import avatar2 from '../avatar2.png'
+import avatar3 from '../avatar3.png'
+import avatar4 from '../avatar4.png'
 import type { nftType } from './types'
 
+console.log(avatar0)
 export const nftMockData: nftType[] = [
 	{
 		id: 0,
