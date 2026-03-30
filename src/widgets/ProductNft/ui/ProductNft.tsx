@@ -15,7 +15,11 @@ export function ProductNft({ id }: { id: string | undefined }) {
 	return (
 		<>
 			<section className={`${styles.product} wrapper`}>
-				<div onClick={() => navigate(-1)} className={styles['back']}>
+				<div
+					id='adaptive-hide'
+					onClick={() => navigate(-1)}
+					className={styles['back']}
+				>
 					<img src={leftArrow} alt='' />
 					<h3>Product Detail</h3>
 				</div>
@@ -53,7 +57,7 @@ export function ProductNft({ id }: { id: string | undefined }) {
 										<h4>{nft.price}</h4>
 									</div>
 								</div>
-								<div className={styles['info']}>
+								<div className={`${styles['info']} ${styles['align-left']}`}>
 									<p>End in</p>
 									<span>{nft.expirationDate}</span>
 								</div>

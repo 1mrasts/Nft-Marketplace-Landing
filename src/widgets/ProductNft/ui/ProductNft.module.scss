@@ -10,11 +10,23 @@
 		background-color: #fafafa;
 		border-radius: 25px;
 		box-shadow: 20px 20px 60px 0px #0000001f;
+
+		@media (max-width: 1200px) {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 35px;
+			padding: 15px 15px 25px 15px;
+		}
 	}
 	&__info {
 		display: flex;
 		flex-direction: column;
 		gap: 70px;
+
+		@media (max-width: 1200px) {
+			gap: 50px;
+		}
 
 		.text__block {
 			display: flex;
@@ -24,15 +36,26 @@
 			h2 {
 				line-height: 32px;
 			}
+			@media (max-width: 1200px) {
+				gap: 5px;
+			}
 		}
 		.author__block {
 			display: flex;
 			flex-direction: row;
 			gap: 80px;
 
+			@media (max-width: 1200px) {
+				gap: 40px;
+			}
+
 			img {
 				max-width: 66px;
 				max-height: 66px;
+				@media (max-width: 1200px) {
+					max-width: 44px;
+					max-height: 44px;
+				}
 			}
 
 			.author {
@@ -92,14 +115,22 @@
 			font-family: 'Poppins';
 			font-weight: 700;
 			font-size: 18px;
+			@media (max-width: 1200px) {
+				padding: 15px !important;
+			}
 		}
 	}
 	.avatar {
 		display: flex;
-
+		aspect-ratio: 1 / 1;
 		width: 45%;
 		img {
 			border-radius: 24px;
+		}
+
+		@media (max-width: 1360px) {
+			aspect-ratio: 1 / 1;
+			justify-content: center;
 		}
 	}
 }
@@ -118,4 +149,18 @@
 
 .wrapper {
 	padding: 0rem 12rem 0rem 12rem;
+	@media (max-width: 1780px) {
+		padding: 0px 40px 0px 40px;
+	}
+	@media (max-width: 1360px) {
+		padding: 15px 15px 25px 15px;
+	}
+	@media (max-width: 1200px) {
+		display: flex;
+		justify-content: center;
+		padding: 15px 15px 25px 15px;
+	}
+}
+.align-left {
+	align-items: end !important;
 }
