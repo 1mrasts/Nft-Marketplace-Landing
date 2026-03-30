@@ -1,5 +1,10 @@
 // mockData - используется для заглушки backend api, чтобы данные так или иначе были
 
+import avatar0 from '../0.png'
+import avatar1 from '../1.png'
+import avatar2 from '../2.png'
+import avatar3 from '../3.png'
+import avatar4 from '../4.png'
 import type { nftType } from './types'
 
 export const nftMockData: nftType[] = [
@@ -16,7 +21,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '07h 09m 12s',
-		image: '/src/entities/nfts/0.png',
+		image: avatar0,
 		idOwner: 0,
 	},
 	{
@@ -32,7 +37,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '07h 09m 12s',
-		image: '/src/entities/nfts/1.png',
+		image: avatar1,
 		idOwner: 1,
 	},
 	{
@@ -48,7 +53,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '19h 09m 12s',
-		image: '/src/entities/nfts/2.png',
+		image: avatar2,
 		idOwner: 2,
 	},
 	{
@@ -64,7 +69,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '19h 09m 12s',
-		image: '/src/entities/nfts/3.png',
+		image: avatar3,
 		idOwner: 3,
 	},
 	{
@@ -80,7 +85,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '07h 09m 12s',
-		image: '/src/entities/nfts/4.png',
+		image: avatar4,
 		idOwner: 4,
 	},
 	{
@@ -96,7 +101,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '07h 09m 12s',
-		image: '/src/entities/nfts/4.png',
+		image: avatar4,
 		idOwner: 5,
 	},
 	{
@@ -112,7 +117,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '07h 09m 12s',
-		image: '/src/entities/nfts/4.png',
+		image: avatar4,
 		idOwner: 0,
 	},
 	{
@@ -128,7 +133,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '07h 09m 12s',
-		image: '/src/entities/nfts/4.png',
+		image: avatar4,
 		idOwner: 1,
 	},
 	{
@@ -144,7 +149,7 @@ export const nftMockData: nftType[] = [
 		sale: true,
 		direct_sale: false,
 		expirationDate: '07h 09m 12s',
-		image: '/src/entities/nfts/4.png',
+		image: avatar4,
 		idOwner: 2,
 	},
 ]

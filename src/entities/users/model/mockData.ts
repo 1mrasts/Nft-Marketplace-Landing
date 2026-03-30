@@ -1,3 +1,8 @@
+import avatar0 from '../avatar0.png'
+import avatar1 from '../avatar1.png'
+import avatar2 from '../avatar2.png'
+import avatar3 from '../avatar3.png'
+import avatar4 from '../avatar4.png'
 import type { userType } from './types'
 
 export const usersMockData: userType[] = [
@@ -6,7 +11,7 @@ export const usersMockData: userType[] = [
 		name: 'Alex Ca.',
 		login: '@Alexy',
 		isBest: true,
-		avatar: '/src/entities/users/avatar0.png',
+		avatar: avatar0,
 		cash: 8456,
 		floorPrice: 3.5,
 		owners: 2.2,
@@ -18,7 +23,7 @@ export const usersMockData: userType[] = [
 		name: 'Juliya Sa.',
 		login: '@JuliyaS',
 		isBest: true,
-		avatar: '/src/entities/users/avatar1.png',
+		avatar: avatar1,
 		cash: 5327,
 		floorPrice: 7.9,
 		owners: 3.4,
@@ -30,7 +35,7 @@ export const usersMockData: userType[] = [
 		name: 'Imrasts',
 		login: '@imrasts',
 		isBest: true,
-		avatar: '/src/entities/users/avatar4.png',
+		avatar: avatar4,
 		cash: 5231,
 		floorPrice: 3.5,
 		owners: 2.2,
@@ -42,7 +47,7 @@ export const usersMockData: userType[] = [
 		name: 'Veronika Kr.',
 		login: '@Nika',
 		isBest: true,
-		avatar: '/src/entities/users/avatar2.png',
+		avatar: avatar2,
 		cash: 9999,
 		floorPrice: 3.5,
 		owners: 2.2,
@@ -54,7 +59,7 @@ export const usersMockData: userType[] = [
 		name: 'Trevor Pu.',
 		login: '@TrevorP',
 		isBest: true,
-		avatar: '/src/entities/users/avatar3.png',
+		avatar: avatar3,
 		cash: 20,
 		floorPrice: 3.9,
 		owners: 3.4,
@@ -66,7 +71,7 @@ export const usersMockData: userType[] = [
 		name: 'Test T.',
 		login: '@tested',
 		isBest: true,
-		avatar: '/src/entities/users/avatar4.png',
+		avatar: avatar4,
 		cash: 5231,
 		floorPrice: 3.5,
 		owners: 2.2,

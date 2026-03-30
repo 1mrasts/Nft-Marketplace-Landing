@@ -5,27 +5,32 @@ import { Product } from '../../pages/Product'
 import { Sell } from '../../pages/Sell'
 import { App } from '../App'
 
-export const Router = createBrowserRouter([
+export const Router = createBrowserRouter(
+	[
+		{
+			path: '/',
+			element: <App />,
+			children: [
+				{
+					index: true,
+					element: <Home />,
+				},
+				{
+					path: '/discover',
+					element: <Discover />,
+				},
+				{
+					path: '/sell',
+					element: <Sell />,
+				},
+				{
+					path: '/nft/:id',
+					element: <Product />,
+				},
+			],
+		},
+	],
 	{
-		path: '/',
-		element: <App />,
-		children: [
-			{
-				index: true,
-				element: <Home />,
-			},
-			{
-				path: '/discover',
-				element: <Discover />,
-			},
-			{
-				path: '/sell',
-				element: <Sell />,
-			},
-			{
-				path: '/nft/:id',
-				element: <Product />,
-			},
-		],
+		basename: '/Nft-Marketplace-Landing',
 	},
-])
+)
