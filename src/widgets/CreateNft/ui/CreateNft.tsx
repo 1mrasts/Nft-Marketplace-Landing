@@ -28,10 +28,24 @@ export function CreateNft() {
 		idOwner: 1,
 	})
 	const inputRef = useRef<HTMLInputElement>(null)
+	const [hide, setHideToggle] = useState<string>('hide')
+	const [validate, setValidate] = useState<boolean>(false)
 
+	function validateName(e: React.ChangeEvent<HTMLInputElement>) {
+		setNftForm(prev => ({ ...prev, name: e.target.value }))
+		setValidate(true)
+	}
 	function addNftHandle() {
-		addNft(nftForm)
-		console.log('NFT создан')
+		if (
+			validate == true &&
+			nfts.filter(item => item.name == nftForm.name).length <= 0
+		) {
+			addNft(nftForm)
+			setHideToggle('show')
+			setTimeout(() => setHideToggle('hide'), 1000)
+		} else {
+			alert('Такой NFT уже есть или вы заполнили не все поля')
+		}
 	}
 	return (
 		<>
@@ -81,7 +95,9 @@ export function CreateNft() {
 									type='text'
 									placeholder='ArtWork Name'
 									onChange={e =>
-										setNftForm(prev => ({ ...prev, name: e.target.value }))
+										e.target.value.length <= 2
+											? setValidate(false)
+											: validateName(e)
 									}
 								/>
 							</form>
@@ -225,7 +241,12 @@ export function CreateNft() {
 								</label>
 							</form>
 						</div>
-						<button onClick={addNftHandle}>Create</button>
+						<div className={styles['create__block']}>
+							<button onClick={addNftHandle}>Create</button>
+							<div id={hide} className={styles['done']}>
+								<p>Успешно</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
