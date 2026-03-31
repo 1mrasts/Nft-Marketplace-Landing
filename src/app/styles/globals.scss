@@ -207,10 +207,18 @@ footer {
 	}
 }
 #hide {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity 0.3s ease-out,
+		visibility 0.3s ease-out;
 }
 #show {
-	display: flex;
+	opacity: 1;
+	visibility: visible;
+	transition:
+		opacity 0.3s ease-out,
+		visibility 0.3s ease-out;
 }
 br {
 	display: block;

@@ -18,6 +18,7 @@
 		flex-direction: row;
 		gap: 40px;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 }
 
@@ -26,9 +27,19 @@
 	flex-direction: row;
 	gap: 20px;
 
+	img {
+		@media (max-width: 1360px) {
+			width: 20px;
+			height: 20px;
+		}
+	}
 	button {
 		display: flex;
 		flex-direction: row;
 		gap: 10px;
+
+		@media (max-width: 1360px) {
+			padding: 10px !important;
+		}
 	}
 }

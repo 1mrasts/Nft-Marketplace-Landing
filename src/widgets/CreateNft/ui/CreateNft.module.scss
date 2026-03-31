@@ -6,15 +6,49 @@
 
 	&__body {
 		display: flex;
-		flex-direction: row;
+		flex-direction: row-reverse;
 		width: 100%;
 		gap: 50px;
+
+		@media (max-width: 700px) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 	&__text {
 		display: flex;
 		flex-direction: column;
 		width: 50%;
 		gap: 110px;
+
+		@media (max-width: 700px) {
+			width: 100%;
+		}
+
+		.create__block {
+			display: flex;
+			flex-direction: column;
+			gap: 25px;
+			align-items: center;
+			width: 100%;
+
+			button {
+				width: 100%;
+			}
+			.done {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 16px 24px;
+				background-color: #50c878;
+				border-radius: 16px;
+				width: 50%;
+
+				p {
+					color: #ffffff;
+				}
+			}
+		}
 	}
 	&__title {
 		display: flex;
@@ -26,6 +60,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 35px;
+
+		@media (max-width: 700px) {
+			gap: 20px;
+		}
 
 		form {
 			display: flex;
@@ -41,7 +79,7 @@
 
 				background-image: url(../edit.svg);
 				background-color: #efefef;
-				background-position: right 25px top 20px;
+				background-position: right 17px top 13px;
 				background-size: 22px;
 				background-repeat: no-repeat;
 
@@ -54,13 +92,16 @@
 				border-radius: 10px;
 
 				line-height: 125%;
+				@media (max-width: 700px) {
+					padding: 15px 17px 15px 17px;
+				}
 			}
 			select {
 				padding: 20px 70px 20px 25px;
 
 				background-image: url(../arrow.svg);
 				background-color: #efefef;
-				background-position: right 25px top 25px;
+				background-position: right 17px top 22px;
 				background-size: 10px;
 				background-repeat: no-repeat;
 
@@ -78,12 +119,20 @@
 				border-radius: 10px;
 
 				line-height: 125%;
+
+				@media (max-width: 700px) {
+					padding: 15px 17px 15px 17px;
+				}
 			}
 		}
 		&-dual {
 			display: flex;
 			flex-direction: row;
 			gap: 35px;
+			@media (max-width: 700px) {
+				flex-direction: column;
+				gap: 15px;
+			}
 		}
 		&-toggle {
 			flex-direction: row !important;
@@ -144,6 +193,10 @@
 		gap: 50px;
 		align-items: center;
 
+		@media (max-width: 700px) {
+			width: 100%;
+		}
+
 		&-block {
 			display: flex;
 			flex-direction: column;
@@ -156,6 +209,10 @@
 
 			background-color: #fcfcfd;
 			box-shadow: 40px 10px 60px 0 rgba(199, 199, 199, 0.6);
+
+			@media (max-width: 700px) {
+				width: 80%;
+			}
 
 			p {
 				text-align: center;

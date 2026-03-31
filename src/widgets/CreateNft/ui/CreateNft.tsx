@@ -28,18 +28,65 @@ export function CreateNft() {
 		idOwner: 1,
 	})
 	const inputRef = useRef<HTMLInputElement>(null)
+	const [hide, setHideToggle] = useState<string>('hide')
+	const [validate, setValidate] = useState<boolean>(false)
 
+	function validateName(e: React.ChangeEvent<HTMLInputElement>) {
+		setNftForm(prev => ({ ...prev, name: e.target.value }))
+		setValidate(true)
+	}
 	function addNftHandle() {
-		addNft(nftForm)
-		console.log('NFT создан')
+		if (
+			validate == true &&
+			nfts.filter(item => item.name == nftForm.name).length <= 0
+		) {
+			addNft(nftForm)
+			setHideToggle('show')
+			setTimeout(() => setHideToggle('hide'), 1000)
+		} else {
+			alert('Такой NFT уже есть или вы заполнили не все поля')
+		}
 	}
 	return (
 		<>
 			<section className={`${styles.sell} wrapper button`}>
-				<div className={styles['sell__title']}>
+				<div id='adaptive-hide' className={styles['sell__title']}>
 					<h2>Create Your NFT</h2>
 				</div>
 				<div className={styles['sell__body']}>
+					<div className={`${styles['sell__avatar']} button`}>
+						<a
+							style={
+								nftForm.image != null
+									? {
+											backgroundImage: `url(${nftForm.image})`,
+											backgroundSize: 'cover	',
+											backgroundPosition: 'center',
+										}
+									: {}
+							}
+							onClick={e => handleLoadClick(e, inputRef)}
+							className={styles['sell__avatar-block']}
+						>
+							<img
+								src={upload}
+								alt=''
+								style={nftForm.image.length < 1 ? {} : { display: 'none' }}
+							/>
+							<p style={nftForm.image.length < 1 ? {} : { display: 'none' }}>
+								PNG, GIF, WEBP, MP4
+								<br /> or MP3. Max 1Gb.
+							</p>
+						</a>
+						<input
+							type='file'
+							accept='image/*'
+							ref={inputRef}
+							style={{ display: 'none' }}
+							onChange={e => handleFileChange(e, setNftForm)}
+						/>
+						<button>Upload</button>
+					</div>
 					<div className={styles['sell__text']}>
 						<div className={styles['sell__forms']}>
 							<form>
@@ -48,7 +95,9 @@ export function CreateNft() {
 									type='text'
 									placeholder='ArtWork Name'
 									onChange={e =>
-										setNftForm(prev => ({ ...prev, name: e.target.value }))
+										e.target.value.length <= 2
+											? setValidate(false)
+											: validateName(e)
 									}
 								/>
 							</form>
@@ -192,40 +241,12 @@ export function CreateNft() {
 								</label>
 							</form>
 						</div>
-						<button onClick={addNftHandle}>Create</button>
-					</div>
-					<div className={`${styles['sell__avatar']} button`}>
-						<a
-							style={
-								nftForm.image != null
-									? {
-											backgroundImage: `url(${nftForm.image})`,
-											backgroundSize: 'cover	',
-											backgroundPosition: 'center',
-										}
-									: {}
-							}
-							onClick={e => handleLoadClick(e, inputRef)}
-							className={styles['sell__avatar-block']}
-						>
-							<img
-								src={upload}
-								alt=''
-								style={nftForm.image.length < 1 ? {} : { display: 'none' }}
-							/>
-							<p style={nftForm.image.length < 1 ? {} : { display: 'none' }}>
-								PNG, GIF, WEBP, MP4
-								<br /> or MP3. Max 1Gb.
-							</p>
-						</a>
-						<input
-							type='file'
-							accept='image/*'
-							ref={inputRef}
-							style={{ display: 'none' }}
-							onChange={e => handleFileChange(e, setNftForm)}
-						/>
-						<button>Upload</button>
+						<div className={styles['create__block']}>
+							<button onClick={addNftHandle}>Create</button>
+							<div id={hide} className={styles['done']}>
+								<p>Успешно</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

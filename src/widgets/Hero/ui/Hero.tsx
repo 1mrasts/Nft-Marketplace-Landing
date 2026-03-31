@@ -33,7 +33,12 @@ export function Hero() {
 					</button>
 				</div>
 			</div>
-			<img src={trust} alt='' className='mt-20' />
+			<img
+				id='adaptive-show'
+				src={trust}
+				alt=''
+				className={`${styles['trust']} mt-20`}
+			/>
 			<img className={styles['hero__banner']} src={heroBanner} alt='Header' />
 		</section>
 	)
